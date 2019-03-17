@@ -1,0 +1,683 @@
+import java.util.Scanner;
+import java.util.Random; 
+
+class millionaire{
+  public static void main (String[] args){
+    
+    Scanner in = new Scanner(System.in);
+    Random ran = new Random(); 
+ 
+    int randomnum=0;
+    String a = "a";
+    String b = "b";
+    String c = "c";
+    String d = "d";
+    String lifeline1= "1";
+    String lifeline2="2";
+    String lifeline3="3"; 
+    String answer = "0";
+    String finalanswer = "0";
+    String yes = "yes";
+    int audienceanswer1 = 0;
+    int audienceanswer2 = 0;
+    int audienceanswer3 = 0; 
+    int audienceanswer4 = 0;
+ 
+    String name;
+    System.out.println("what is your name?");
+    name = in.nextLine();
+    System.out.println(name + ": Welcome to Who Wants to be a Millionaire! in this game show you have to answer 15 questions correctly in a row. in this game you will have three life lines 1, Ask the Audience. 2, Phone a Friend. 3, 50-50."); 
+    
+    randomnum = ran.nextInt(4)+1;
+    
+    
+    
+    
+    if (randomnum ==1) {
+      do {
+        do{ 
+          System.out.println("What year was Minecraft created? \n A. 2010 \n B. 1999 \n C. 2005 \n D. 2009 \n 1. 50-50. \n 2. Call a friend \n 3. Ask the audience");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+
+      if (answer.equalsIgnoreCase(d)) {
+        System.out.println("You got it right! Congrats!");
+      }
+       else {
+        System.out.println("Sorry you got it wrong");
+      }
+    
+   if (answer.equals(lifeline2)){
+      System.out.println("You chose phone a friend");
+            do {
+        do{ 
+          System.out.println( "Friend: the answer is most likely A I used to play Minecraft when it first came out");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+      
+      if ((answer.equalsIgnoreCase(b)) || (answer.equalsIgnoreCase(c)) || (answer.equalsIgnoreCase(d))) {
+        System.out.println("Sorry you got it wrong");
+          }
+      if (answer.equalsIgnoreCase(a)) {
+        System.out.println("You got it right! Congrats!");
+      }
+    }
+    if (answer.equals(lifeline1)){
+   System.out.println("You have chosen the 50/50 lifeline");
+               do {
+        do{ 
+        System.out.println("What year was Minecraft created? \n A. 1999  \n B. 2009");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+       
+      if (answer.equalsIgnoreCase(a)) {
+        System.out.println("You got it right! Congrats!"); 
+      }
+        else{
+        System.out.println("Sorry you got it wrong");
+        }
+      }
+      else if (answer.equals(lifeline3)){
+      System.out.println("You have chosen the ask the audience lifeline.");
+          audienceanswer1 = ran.nextInt(1)+5;
+          audienceanswer2 = ran.nextInt(1)+20;
+          audienceanswer3 = ran.nextInt(1)+55;
+          audienceanswer4 = 123 - audienceanswer1 - audienceanswer2 - audienceanswer3;
+        do{
+          do{
+            System.out.println("out of 123 people said: \n A. 2010: "+ (audienceanswer1)+ " \n B. 1999: "+audienceanswer2+ "\n C. 2005: "+audienceanswer3+" \n D. 2009: "+audienceanswer4 + "\n\n Enter your new guess:");
+            answer = in.nextLine(); 
+            if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)){
+              System.out.println("Invalid Input. Please Try Again. \n\n");
+            }
+          } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+
+          System.out.println("Is this your final answer? (yes or no)");
+          finalanswer=in.nextLine();
+
+        } while(!finalanswer.equals(yes));
+        if (answer.equals(d)) {
+          System.out.println("You got it right");
+        }
+        else {
+          System.out.println("Sorry you got it wrong"); 
+        }
+      }
+    }
+    
+ 
+    
+    if (randomnum ==2) {
+      do {
+        do{ 
+         System.out.println("Which of these is not a country in Africa? \n A.Burkina Faso \n B.Saudi Arabia \n C. Cote D'Ivoire \n D. Botswana \n 1. 50-50. \n 2. Call a friend \n 3. Ask the audience");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+
+      if (answer.equalsIgnoreCase(b)) {
+        System.out.println("You got it right! Congrats!");
+      }
+       else {
+        System.out.println("Sorry you got it wrong");
+      }
+    
+   if (answer.equals(lifeline2)){
+      System.out.println("You chose phone a friend");
+            do {
+        do{ 
+          System.out.println( "Friend: The answer has to be B Saudi Arabia is in Asia");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+      
+      if ((answer.equalsIgnoreCase(b)) || (answer.equalsIgnoreCase(c)) || (answer.equalsIgnoreCase(d))) {
+        System.out.println("Sorry you got it wrong");
+          }
+      if (answer.equalsIgnoreCase(b)) {
+        System.out.println("You got it right! Congrats!");
+      }
+    }
+    if (answer.equals(lifeline1)){
+   System.out.println("You have chosen the 50/50 lifeline");
+               do {
+        do{ 
+        System.out.println("Which of these is not a country in Africa? \n A.Burkina Faso \n B.Saudi Arabia");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+       
+      if (answer.equalsIgnoreCase(b)) {
+        System.out.println("You got it right! Congrats!"); 
+      }
+        else{
+        System.out.println("Sorry you got it wrong");
+        }
+      }
+      else if (answer.equals(lifeline3)){
+      System.out.println("You have chosen the ask the audience lifeline.");
+          audienceanswer1 = ran.nextInt(1)+5;
+          audienceanswer2 = ran.nextInt(1)+90;
+          audienceanswer3 = ran.nextInt(1)+20;
+          audienceanswer4 = 123 - audienceanswer1 - audienceanswer2 - audienceanswer3;
+        do{
+          do{
+            System.out.println("out of 123 people said: \n A. Burkina Faso: "+ (audienceanswer1)+ " \n B. Saudi Arabia: "+audienceanswer2+ "\n C. Cote D'Ivoire: "+audienceanswer3+" \n D. Botswana: "+audienceanswer4 + "\n\n Enter your new guess:");
+            answer = in.nextLine(); 
+            if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)){
+              System.out.println("Invalid Input. Please Try Again. \n\n");
+            }
+          } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+
+          System.out.println("Is this your final answer? (yes or no)");
+          finalanswer=in.nextLine();
+
+        } while(!finalanswer.equals(yes));
+        if (answer.equals(b)) {
+          System.out.println("You got it right");
+        }
+        else {
+          System.out.println("Sorry you got it wrong"); 
+        }
+      }
+    }
+    
+    if (randomnum ==3) {
+      do {
+        do{ 
+         System.out.println("The game of Mah-Jong originated in what country? \n A.China \n B. Japan \n C. England \n D. Russia \n 1. 50-50. \n 2. Call a friend \n 3. Ask the audience");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+
+      if (answer.equalsIgnoreCase(a)) {
+        System.out.println("You got it right! Congrats!");
+      }
+       else {
+        System.out.println("Sorry you got it wrong");
+      }
+    
+   if (answer.equals(lifeline2)){
+      System.out.println("You chose phone a friend");
+            do {
+        do{ 
+          System.out.println( "Friend: The answer has to be A I played Mah-Jong alot growing up");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+      
+      if ((answer.equalsIgnoreCase(b)) || (answer.equalsIgnoreCase(c)) || (answer.equalsIgnoreCase(d))) {
+        System.out.println("Sorry you got it wrong");
+          }
+      if (answer.equalsIgnoreCase(a)) {
+        System.out.println("You got it right! Congrats!");
+      }
+    }
+    if (answer.equals(lifeline1)){
+   System.out.println("You have chosen the 50/50 lifeline");
+               do {
+        do{ 
+        System.out.println("Which of these is not a country did Mah-Jong originate from? \n A.China \n D.Russia");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+       
+      if (answer.equalsIgnoreCase(a)) {
+        System.out.println("You got it right! Congrats!"); 
+      }
+        else{
+        System.out.println("Sorry you got it wrong");
+        }
+      }
+      else if (answer.equals(lifeline3)){
+      System.out.println("You have chosen the ask the audience lifeline.");
+          audienceanswer1 = ran.nextInt(1)+94;
+          audienceanswer2 = ran.nextInt(1)+33;
+          audienceanswer3 = ran.nextInt(1)+20;
+          audienceanswer4 = 123 - audienceanswer1 - audienceanswer2 - audienceanswer3;
+        do{
+          do{
+            System.out.println("out of 123 people said: \n A. China: "+ (audienceanswer1)+ " \n B. Japan: "+audienceanswer2+ "\n C. England: "+audienceanswer3+" \n D. Russia : "+audienceanswer4 + "\n\n Enter your new guess:");
+            answer = in.nextLine(); 
+            if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)){
+              System.out.println("Invalid Input. Please Try Again. \n\n");
+            }
+          } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+
+          System.out.println("Is this your final answer? (yes or no)");
+          finalanswer=in.nextLine();
+
+        } while(!finalanswer.equals(yes));
+        if (answer.equals(b)) {
+          System.out.println("You got it right");
+        }
+
+        else {
+          System.out.println("Sorry you got it wrong"); 
+        }
+      }
+    }
+    
+      if (randomnum ==4) {
+      do {
+        do{ 
+         System.out.println("What nationality is celebrated on St. Patrick's Day? \n A. Irish \n B. Welsh \n C. American Indian \n D. Mexican \n 1. 50-50. \n 2. Call a friend \n 3. Ask the audience");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+
+      if (answer.equalsIgnoreCase(a)) {
+        System.out.println("You got it right! Congrats!");
+      }
+       else {
+        System.out.println("Sorry you got it wrong");
+      }
+    
+   if (answer.equals(lifeline2)){
+      System.out.println("You chose phone a friend");
+            do {
+        do{ 
+          System.out.println( "Friend: Im Irish I celebrate St. patric day every year");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+      
+      if ((answer.equalsIgnoreCase(b)) || (answer.equalsIgnoreCase(c)) || (answer.equalsIgnoreCase(d))) {
+        System.out.println("Sorry you got it wrong");
+          }
+      if (answer.equalsIgnoreCase(a)) {
+        System.out.println("You got it right! Congrats!");
+      }
+    }
+    if (answer.equals(lifeline1)){
+   System.out.println("You have chosen the 50/50 lifeline");
+               do {
+        do{ 
+        System.out.println("Which of these is not a country did Mah-Jong originate from? \n A.Irish \n D.Mexican");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+       
+      if (answer.equalsIgnoreCase(a)) {
+        System.out.println("You got it right! Congrats!"); 
+      }
+        else{
+        System.out.println("Sorry you got it wrong");
+        }
+      }
+      else if (answer.equals(lifeline3)){
+      System.out.println("You have chosen the ask the audience lifeline.");
+          audienceanswer1 = ran.nextInt(1)+94;
+          audienceanswer2 = ran.nextInt(1)+33;
+          audienceanswer3 = ran.nextInt(1)+20;
+          audienceanswer4 = 123 - audienceanswer1 - audienceanswer2 - audienceanswer3;
+        do{
+          do{
+            System.out.println("out of 123 people said: \n A. Irish: "+ (audienceanswer1)+ " \n B. Welsh: "+audienceanswer2+ "\n C. American Indian: "+audienceanswer3+" \n D. Mexican : "+audienceanswer4 + "\n\n Enter your new guess:");
+            answer = in.nextLine(); 
+            if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)){
+              System.out.println("Invalid Input. Please Try Again. \n\n");
+            }
+          } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+
+          System.out.println("Is this your final answer? (yes or no)");
+          finalanswer=in.nextLine();
+
+        } while(!finalanswer.equals(yes));
+        if (answer.equals(a)) {
+          System.out.println("You got it right");
+        }
+
+        else {
+          System.out.println("Sorry you got it wrong"); 
+        }
+      }
+    }
+    
+          if (randomnum ==5) {
+      do {
+        do{ 
+         System.out.println ("What chemical is typically added to the water in swimming pools? \n A. Chlorine \n B. Ammonia \n C. Sulfur \n D. Salt \n 1. 50-50. \n 2. Call a friend \n 3. Ask the audience");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+
+      if (answer.equalsIgnoreCase(a)) {
+        System.out.println("You got it right! Congrats!");
+      }
+       else {
+        System.out.println("Sorry you got it wrong");
+      }
+    
+   if (answer.equals(lifeline2)){
+      System.out.println("You chose phone a friend");
+            do {
+        do{ 
+          System.out.println( "Friend: Im a scientist chlorine is always added to swimming pools");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+      
+      if ((answer.equalsIgnoreCase(b)) || (answer.equalsIgnoreCase(c)) || (answer.equalsIgnoreCase(d))) {
+        System.out.println("Sorry you got it wrong");
+          }
+      if (answer.equalsIgnoreCase(a)) {
+        System.out.println("You got it right! Congrats!");
+      }
+    }
+    if (answer.equals(lifeline1)){
+   System.out.println("You have chosen the 50/50 lifeline");
+               do {
+        do{ 
+        System.out.println("Which of these is added to swimming pools? \n A.chlorine \n D.salt");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+       
+      if (answer.equalsIgnoreCase(a)) {
+        System.out.println("You got it right! Congrats!"); 
+      }
+        else{
+        System.out.println("Sorry you got it wrong");
+        }
+      }
+      else if (answer.equals(lifeline3)){
+      System.out.println("You have chosen the ask the audience lifeline.");
+          audienceanswer1 = ran.nextInt(1)+94;
+          audienceanswer2 = ran.nextInt(1)+33;
+          audienceanswer3 = ran.nextInt(1)+20;
+          audienceanswer4 = 123 - audienceanswer1 - audienceanswer2 - audienceanswer3;
+        do{
+          do{
+            System.out.println("out of 123 people said: \n A. Chlorine: "+ (audienceanswer1)+ " \n B. Ammonia: "+audienceanswer2+ "\n C. Sulfur: "+audienceanswer3+" \n D. Salt : "+audienceanswer4 + "\n\n Enter your new guess:");
+            answer = in.nextLine(); 
+            if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)){
+              System.out.println("Invalid Input. Please Try Again. \n\n");
+            }
+          } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+
+          System.out.println("Is this your final answer? (yes or no)");
+          finalanswer=in.nextLine();
+
+        } while(!finalanswer.equals(yes));
+        if (answer.equals(a)) {
+          System.out.println("You got it right");
+        }
+
+        else {
+          System.out.println("Sorry you got it wrong"); 
+        }
+      }
+    }
+    
+          
+          
+          
+          
+          
+          
+     if (randomnum ==6) {
+      do {
+        do{ 
+         System.out.println("How many different combinations of dots are possible in Braille? \n A. 49 \n B. 63 \n C. 75 \n D. 87 \n 1. 50-50. \n 2. Call a friend \n 3. Ask the audience");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+
+      if (answer.equalsIgnoreCase(b)) {
+        System.out.println("You got it right! Congrats!");
+      }
+       else {
+        System.out.println("Sorry you got it wrong");
+      }
+    
+   if (answer.equals(lifeline2)){
+      System.out.println("You chose phone a friend");
+            do {
+        do{ 
+          System.out.println( "Friend: Im not sure but I think it is C");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+      
+      if ((answer.equalsIgnoreCase(b)) || (answer.equalsIgnoreCase(c)) || (answer.equalsIgnoreCase(d))) {
+        System.out.println("Sorry you got it wrong");
+          }
+      if (answer.equalsIgnoreCase(b)) {
+        System.out.println("You got it right! Congrats!");
+      }
+    }
+    if (answer.equals(lifeline1)){
+   System.out.println("You have chosen the 50/50 lifeline");
+               do {
+        do{ 
+        System.out.println("How many differnt combinations of Braille are there? \n A.49 \n B.63");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+       
+      if (answer.equalsIgnoreCase(b)) {
+        System.out.println("You got it right! Congrats!"); 
+      }
+        else{
+        System.out.println("Sorry you got it wrong");
+        }
+      }
+      else if (answer.equals(lifeline3)){
+      System.out.println("You have chosen the ask the audience lifeline.");
+          audienceanswer1 = ran.nextInt(1)+63;
+          audienceanswer2 = ran.nextInt(1)+75;
+          audienceanswer3 = ran.nextInt(1)+20;
+          audienceanswer4 = 123 - audienceanswer1 - audienceanswer2 - audienceanswer3;
+        do{
+          do{
+            System.out.println("out of 123 people said: \n A. 49: "+ (audienceanswer1)+ " \n B. 63: "+audienceanswer2+ "\n C.75: "+audienceanswer3+" \n D. 87 : "+audienceanswer4 + "\n\n Enter your new guess:");
+            answer = in.nextLine(); 
+            if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)){
+              System.out.println("Invalid Input. Please Try Again. \n\n");
+            }
+          } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+
+          System.out.println("Is this your final answer? (yes or no)");
+          finalanswer=in.nextLine();
+
+        } while(!finalanswer.equals(yes));
+        if (answer.equals(b)) {
+          System.out.println("You got it right");
+        }
+
+        else {
+          System.out.println("Sorry you got it wrong"); 
+        }
+      }
+    }
+    
+     
+    if (randomnum ==7) {
+      do {
+        do{ 
+         System.out.println("What is the Italian word for a square or marketplace? \n A. Pisa \n B. Piazza \n C. Plaza \n D. Presto \n 1. 50-50. \n 2. Call a friend \n 3. Ask the audience");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)&&!answer.equals(lifeline1)&&!answer.equals(lifeline2)&&!answer.equals(lifeline3));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+
+      if (answer.equalsIgnoreCase(b)) {
+        System.out.println("You got it right! Congrats!");
+      }
+       else {
+        System.out.println("Sorry you got it wrong");
+      }
+    
+   if (answer.equals(lifeline2)){
+      System.out.println("You chose phone a friend");
+            do {
+        do{ 
+          System.out.println( "Friend: Im Italian the answer is B");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+      
+      if ((answer.equalsIgnoreCase(b)) || (answer.equalsIgnoreCase(c)) || (answer.equalsIgnoreCase(d))) {
+        System.out.println("Sorry you got it wrong");
+          }
+      if (answer.equalsIgnoreCase(b)) {
+        System.out.println("You got it right! Congrats!");
+      }
+    }
+    if (answer.equals(lifeline1)){
+   System.out.println("You have chosen the 50/50 lifeline");
+               do {
+        do{ 
+        System.out.println("What is the Italian word for square or marketplace? \n A.Pisa \n B.Piazza");
+          answer=in.nextLine();
+          if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b)) {
+            System.out.println("Invalid Character");
+          }
+        } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b));
+        System.out.println("Is this your final answer? (yes or no)");
+        finalanswer=in.nextLine(); 
+      } while (!finalanswer.equalsIgnoreCase(yes)); 
+       
+      if (answer.equalsIgnoreCase(b)) {
+        System.out.println("You got it right! Congrats!"); 
+      }
+        else{
+        System.out.println("Sorry you got it wrong");
+        }
+      }
+      else if (answer.equals(lifeline3)){
+      System.out.println("You have chosen the ask the audience lifeline.");
+          audienceanswer1 = ran.nextInt(1)+22;
+          audienceanswer2 = ran.nextInt(1)+66;
+          audienceanswer3 = ran.nextInt(1)+20;
+          audienceanswer4 = 123 - audienceanswer1 - audienceanswer2 - audienceanswer3;
+        do{
+          do{
+            System.out.println("out of 123 people said: \n A. Pisa: "+ (audienceanswer1)+ " \n B. Piazza: "+audienceanswer2+ "\n C. Plaza: "+audienceanswer3+" \n D. Presto : "+audienceanswer4);
+            answer = in.nextLine(); 
+            if (!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d)){
+              System.out.println("Invalid Input. Please Try Again. \n\n");
+            }
+          } while(!answer.equalsIgnoreCase(a) && !answer.equalsIgnoreCase(b) && !answer.equalsIgnoreCase(c) && !answer.equalsIgnoreCase(d));
+
+          System.out.println("Is this your final answer? (yes or no)");
+          finalanswer=in.nextLine();
+
+        } while(!finalanswer.equals(yes));
+        if (answer.equals(b)) {
+          System.out.println("You got it right");
+        }
+
+        else {
+          System.out.println("Sorry you got it wrong"); 
+        }
+      }
+    }
+    
+       in.close();
+   
+  }
+}
